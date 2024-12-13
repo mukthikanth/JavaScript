@@ -30,11 +30,11 @@ let myobject = {
 }
 
 let myfunction = function(){
-    console.log("Hello world")
+    // console.log("Hello world")
 }
 
 
-console.log(typeof BigNumber);
+// console.log(typeof BigNumber);
 
 // outputs of datatypes
 
@@ -46,3 +46,31 @@ console.log(typeof BigNumber);
 // refer official website once
 
 // JavaScript is dynamically typed language
+
+// ***************************
+// Stack(Primitive) and Heap memory(Non primitive)
+
+let Myname = "Mukthikanth"
+let Myanothername = Myname
+Myanothername = "Chintu"
+
+console.log(Myname);
+console.log(Myanothername);
+
+// in stack the second one receives a copy so the original remains same
+
+let mydetails = {
+    height: "5ft 6inches",
+
+}
+
+let myotherdetails = mydetails
+
+myotherdetails.height = "6ft"
+
+console.log(mydetails.height);
+console.log(myotherdetails.height);// by using .value you can get the specific segment of the object
+
+// In heap the original value itself gets updated
+
+

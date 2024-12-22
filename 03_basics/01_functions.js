@@ -78,6 +78,51 @@ function loginUserMessage(username = "Muk"){
     return `${username} just logged in`
 }
 
-console.log(loginUserMessage());// muk is used as default
-console.log(loginUserMessage("mukthikanth"));// mukthikanth is used
+// console.log(loginUserMessage());// muk is used as default
+// console.log(loginUserMessage("mukthikanth"));// mukthikanth is used
+
+// function calculateCartPrice(num1){
+//     return num1
+// }
+// console.log(calculateCartPrice(200));
+
+// function calculateCartPrice(num1){
+//     return num1
+// }
+// console.log(calculateCartPrice(200, 300, 500)); // Only first one is printed
+
+// function calculateCartPrice(...num1){
+//     return num1
+// }
+// console.log(calculateCartPrice(200, 300, 500));// output is array
+// ... is both rest and shatter depending on the situation
+
+function calculateCartPrice(value1, value2, ...num1){
+    return num1
+}
+// console.log(calculateCartPrice(200, 300, 500, 1000));// value1 and value2 accomodates 200, 300
+
+const user = {
+    username: "Diddy",
+    price: "One bottle of johnson's baby oil"
+}
+
+function handleObject(anyobject){
+    console.log(`user ${anyobject.username} has logged in and it's price is ${anyobject.price}`);
+    
+}
+
+// handleObject(user)
+handleObject({
+    username: "mukthikanth",
+    price: 299
+})
+
+const myNewArray = [100, 200, 300, 400]
+
+function returnSecondValue(fromArray){
+    return fromArray[1]
+}
+// console.log(returnSecondValue(myNewArray));
+console.log(returnSecondValue([100, 800, 300, 400]));
 

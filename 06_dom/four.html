@@ -22,8 +22,37 @@
     addLanguage("python");
     addLanguage("java")
     addLanguage("ruby")
-    
-    
+
+
+    function addanotherlanguage(langName){
+        const list = document.createElement('li')
+        list.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(list)
+    }// this is a more optimized way
+    addanotherlanguage('c++')
+
+    // Edit
+
+
+    // const secondlang = document.querySelector('li:nth-child(2)')
+    // const newli = document.createElement('li')
+    // newli.textContent = 'mojo'
+    // secondlang.replaceWith(newli)
+
+    const firstlang = document.querySelector('li:nth-child(1)') // or 'li:first-child'
+    // firstlang.outerHTML = '<li>Typescript</li>'
+    // firstlang.innerHTML = 'Typescript'
+
+
+
+    // remove
+
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+
+
+
+
     
 
 </script>

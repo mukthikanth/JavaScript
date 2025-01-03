@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with chai aur code</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const list = document.createElement('li')
+        // const listText = document.createTextNode(`${langName}`)
+        list.innerText = `${langName}`
+        // list.appendChild(listText)
+        document.querySelector('.language').appendChild(list)
+           
+    }
+    addLanguage("python");
+    addLanguage("java")
+    addLanguage("ruby")
+    
+    
+    
+
+</script>
+</html>

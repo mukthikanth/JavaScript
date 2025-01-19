@@ -37,7 +37,7 @@
 
 
     document.getElementById('owl').addEventListener('click',function(e){
-        console.log(e)
+        // console.log(e)
         // console.log(e.timeStamp)// gives the time starts from 0 miliseconds 
         // console.log(`The event type is ${e.type}`);
 
@@ -54,17 +54,60 @@
         // console.log(`The X co-ordinate wrt screen is ${e.screenX}`)// This gives the position of mouse with respect to the screen
         // console.log(`The Y co-ordinate wrt screen is ${e.screenY}`)
 
-        console.log(e.key)
-        console.log(e.altKey)// If alt key is pressed then result is true to do it mouseclick and alt at same time
-        console.log(e.shiftKey)
-        console.log(e.ctrlKey)
-
-
-
-
-        
+        // console.log(e.key)
+        // console.log(e.altKey)// If alt key is pressed then result is true to do it mouseclick and alt at same time
+        // console.log(e.shiftKey)
+        // console.log(e.ctrlKey)
+        // console.log(e.keycode())    
     },false)
 
+    // Event propagation has two types event bubbling and event capturing 
+    // Event bubbling - False(default)
+    // Event capturing - true
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('clicked inside ul')
+    // },false)
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('clicked on owl')
+    //     console.log(e.stopPropagation())
+    // },false)
+    // when clicked on owl first 'clicked on owl' and then 'clicked inside ul' this is called bubbling propagation from INSIDE OUT
+
+    
+    
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('clicked inside ul')
+    // },true)
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('clicked on owl')
+    // },true)
+    // when clicked on owl first  'clicked inside ul'  and then 'clicked on owl'this is called capturing propagation from  TOP TO BOTTOM
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log('google clicked')
+    //     e.preventDefault()// cannot redirect to google.com
+    // },false)
+
+
+
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log(e.target.parentNode)
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove() 
+            
+        }
+        
+        // removeIt.parentNode.removeChild(removeIt) 
+        
+        // click on any li the enter ul gets removed
+        }
+    ,false)
+    
 
 </script>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // window in console of web
+
+    const words = function(){
+        console.log("intrigued")
+    }
+
+    // setTimeout(function(){
+    //     console.log("intrigued")
+    // },2000)
+    setTimeout(words,2000)
+    // only call the function don't execute it words() is wrong
+
+    const blah = function () {
+        console.log("seeds")
+        
+     }
+    // setInterval(function () {
+    //     console.log("seeds")
+        
+    // },3000)
+    //  setInterval(blah,2000)
+
+     const changeText = function () {
+        document.querySelector('h1').innerHTML = "best js series"
+    }
+    // setTimeout(changeText,2000)
+
+    // Now suppose we need to stop the timeout if an event occurs then we go
+    const changeMe = setTimeout(changeText,2000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("Event stopped")
+        
+    })
+
+</script>
+</html>

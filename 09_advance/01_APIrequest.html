@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #121212; color: aliceblue;" >
+    <p>
+    Value	State	                  Description
+        0	UNSENT	              Client has been created. open() not  
+                                  called yet.
+        1	OPENED	              open() has been called.
+        2	HEADERS_RECEIVED	  send() has been called, and headers     
+                                  and status are available.
+        3	LOADING	Downloading;  responseText holds partial data.
+        4	DONE	              The operation is complete.
+    </p>
+
+</body>
+<script>
+    const requestURL = "https://api.github.com/users/mukthikanth"
+    const xhr = new XMLHttpRequest()
+
+    console.log(xhr.readyState)// This gives the state of request 0-4 and I used it in first to get 0
+    let data;
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            // console.log(this.responseText)
+            let data = this.responseText
+            console.log(typeof data)// Most of time it is a string so you cannot directly access the info so first you convert it into object
+            data = JSON.parse(this.responseText)
+            console.log(typeof data)// now it is a object
+            console.log(data.bio)
+
+                // Assignment to create a card
+
+            // original
+
+            // const Name = `Name: ${data.login}`
+            // const ProfilePic = `Profile Picture: ${data.avatar_url}`
+            // const following = `followind: ${data.following}`
+
+            // const newDiv = document.createElement('div')
+            // newDiv.setAttribute('id',"assignment")
+
+            // const userName = document.createElement('p')
+            // userName.textContent = Name
+
+            // const UserProfilePic = document.createElement('img')
+            // UserProfilePic.setAttribute('src',data.avatar_url)
+
+            // const userFollowing = document.createElement('p')
+            // userFollowing.textContent = following
+
+            // newDiv.appendChild(userName)            
+            // newDiv.appendChild(UserProfilePic)            
+            // newDiv.appendChild(userFollowing) 
+            // document.body.appendChild(newDiv)  
+            
+            // alternate solution
+
+            const newDiv = document.createElement('div')
+            newDiv.setAttribute('id','assignment')
+
+            const Name = `Name: ${data.login}`
+            const ProfilePic = `Profile Picture: ${data.avatar_url}`
+            const following = `Following: ${data.following}`
+
+            const UserName = document.createElement('h1')
+            UserName.textContent = Name
+
+            const Avatar = document.createElement('h1')
+            Avatar.textContent = "Avatar:"
+
+            const UserProfilePic = document.createElement('img')
+            UserProfilePic.setAttribute('src',data.avatar_url)
+            UserProfilePic.style.padding = '10px'
+            UserProfilePic.style.height = '330px'
+            UserProfilePic.style.width = '350px'
+
+            const userFollowing = document.createElement('h1')
+            userFollowing.textContent = following
+         
+
+            newDiv.appendChild(UserName)
+            newDiv.appendChild(userFollowing)
+            newDiv.appendChild(Avatar)
+            newDiv.appendChild(UserProfilePic)
+
+            newDiv.style.backgroundColor = 'aliceblue'
+            newDiv.style.color = 'black'
+             
+            document.body.appendChild(newDiv)
+        }
+    } // if it is placed before OPEN you get all states from 1-4(no 0 as this works only when it changes)
+
+    xhr.open('GET',requestURL)
+    xhr.send()
+ 
+</script>
+</html>

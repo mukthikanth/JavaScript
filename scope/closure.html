@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;" class="body">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    
+    // function outer(){
+    //     let name = "Mukthikanth"
+
+    //     // console.log(secret)// error
+
+    //     function inner(){
+    //         console.log("Inner", name)
+    //         let secret = "my123"
+    //     }
+    //     inner()
+
+    //     function innerTwo(){
+    //         console.log("Inner two", name)
+    //         // console.log(secret)// error 
+    //     }
+    //     innerTwo()
+    // }
+    // outer()
+    // console.log(name)
+
+
+    // function makeFunc() {
+    //     let name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;// not only this displayname scope is returned but the entire makefunc scope is returned
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+
+
+</script>
+
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     // document.querySelector('body').setAttribute("style", "background-color: orange ")
+    //     document.body.style.backgroundColor = 'Orange'
+    // }
+
+    // document.getElementById('green').onclick = function(){
+    //     // document.querySelector('body').setAttribute("style", "background-color: Green")
+    //     document.body.style.backgroundColor = 'green'
+    // }
+
+    function clickHanler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHanler('orange')
+    document.getElementById('green').onclick = clickHanler('green')
+</script>
+</html>

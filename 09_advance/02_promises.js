@@ -43,6 +43,7 @@ const promiseFour = new Promise(function(resolve, reject){
         let error = true
 
         if(!error){
+            
             resolve({
                 name: "Kendrick Lamar",
                 album: "section 80"
@@ -83,6 +84,8 @@ async function consumePromiseFive(){
     try {
         const response = await promiseFive
         console.log(response)
+        console.log(response.name)
+        console.log(response.album)
     } catch (error) {
         console.log(error)
     }
@@ -91,6 +94,18 @@ async function consumePromiseFive(){
 
 consumePromiseFive()
 
+
+// async function getData() {
+//     try {
+//         const response = await fetch('https://api.github.com/users/mukthikanth')
+//         const data = await response.json()
+//         console.log(data)
+//         console.log(data.login)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// getData()
 
 // async function getData(){
 //     try {

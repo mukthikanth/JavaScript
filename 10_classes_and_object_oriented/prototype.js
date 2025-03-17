@@ -36,7 +36,7 @@ EmceePower.getNasPower()
 // since everything array, function , string come under objects it is applicable for arrays also
 myEmcees.Facts() // Ouput is "The greatest trio of all time"
 myName.Facts() // Ouput is "The greatest trio of all time"
-greet.Facts()
+greet.Facts() // Ouput is "The greatest trio of all time"
 
 // testing if the method injected in array is available for an object or not as object is also linked to array
 
@@ -77,6 +77,6 @@ String.prototype.trulength = function(){
     console.log(`${this}`)
     console.log(`The true length is: ${this.trim().length}`)
 }
-anotherEmcee.trulength()// the output of this is Rakim
+anotherEmcee.trulength()// the output of this is Rakim 
 
 "Nas".trulength()// output of this is Nas
